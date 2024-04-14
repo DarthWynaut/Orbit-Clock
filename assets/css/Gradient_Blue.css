@@ -1,0 +1,18 @@
+.Gradient_Blue {
+  background: linear-gradient(33deg, #123667, #000000);
+  background-size: 400% 400%;
+  animation: Gradient_Blue 20s ease infinite;
+}
+
+@keyframes Gradient_Blue {
+  0% {
+    background-position: 81% 0%;
+  }
+  50% {
+    background-position: 20% 100%;
+  }
+  100% {
+    background-position: 81% 0%;
+  }
+}
+

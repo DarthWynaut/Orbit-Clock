@@ -1,0 +1,42 @@
+.clock_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: inherit;
+  /*width: 100vw;*/
+}
+
+.clock_pointer {
+  border: 3px;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  display: grid;
+  transform: rotate(90deg);
+  align-items: center;
+  justify-content: center;
+  transition: 1s linear;
+}
+
+.digital_clock_text {
+  font-size: 20px;
+  margin-bottom: 0;
+}
+
+.pointer_dot {
+  width: 25px;
+  height: 25px;
+  border: 3px;
+  border-radius: 50%;
+  /*border-style: solid;*/
+  border-color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  background: rgba(255, 255, 255, 0.5);
+  transform: translateX(-14px);
+  /*backdrop-filter: brightness(0%);
+  -webkit-backdrop-filter: brightness(0%);*/
+  backdrop-filter: blur(100px);
+  -webkit-backdrop-filter: blur(100px);
+}
+
