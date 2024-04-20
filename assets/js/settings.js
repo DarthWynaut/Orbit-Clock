@@ -2,13 +2,21 @@
 const settings_button = document.getElementById("settings_button");
 const settings_exit = document.getElementById("settings_exit");
 const settings_container = document.getElementById("settings_container");
+const settings_menu = document.getElementById("settings_menu");
+
 const gradient_checkbox = document.getElementById("gradient_checkbox");
+
+const clock_overlap_checkbox = document.getElementById("clock_overlap_checkbox");
+
+const analog_container = document.getElementById("analog_container");
+const digital_container = document.getElementById("digital_container");
+
 const credits_button = document.getElementById("credits_button");
 const credits_container = document.getElementById("credits_container");
-const settings_menu = document.getElementById("settings_menu");
 
 let gradient = true;
 let credits = false;
+let clock_overlap = true;
 
 // Function to be executed on button click
 function open_settings() {
@@ -41,6 +49,18 @@ function switch_gradient() {
     }
 }
 
+function switch_clock_overlap() {
+    clock_overlap = clock_overlap_checkbox.checked;
+    if (clock_overlap) {
+        analog_container.style.transform = "translateX(-150px)"
+        digital_container.style.transform = "translateX(150px)"
+    } else {
+        analog_container.style.transform = "translateX(-300px)"
+        digital_container.style.transform = "translateX(300px)"
+    }
+}
+
+
 function toggle_credits() {
     if (credits) {
         credits_container.style.transform = "translateY(100px)";
@@ -53,7 +73,11 @@ function toggle_credits() {
 
 settings_button.addEventListener('click', open_settings);
 settings_exit.addEventListener('click', close_settings);
+
 gradient_checkbox.addEventListener('change', switch_gradient);
+clock_overlap_checkbox.addEventListener('change', switch_clock_overlap);
+
 credits_button.addEventListener('click', toggle_credits);
 
 switch_gradient(); // Initialize gradient based on last saved value
+switch_clock_overlap(); // Initialize clock's overlap state based on last saved value
