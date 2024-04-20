@@ -4,6 +4,7 @@
   justify-content: center;
   height: inherit;
   /*width: 100vw;*/
+  transition: 1s;
 }
 
 .clock_pointer {
