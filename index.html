@@ -9,9 +9,9 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://DarthWynaut.github.io/Orbit-Clock/assets/img/Orbit Clock Image.png">
     <meta property="og:type" content="website">
+    <meta name="twitter:title" content="Orbit Clock">
     <meta name="description" content="A minimalist clock by DarthWynaut. Remake of DD-921's Simply.">
     <meta property="og:image" content="https://DarthWynaut.github.io/Orbit-Clock/assets/img/Orbit Clock Image.png">
-    <meta name="twitter:title" content="Orbit Clock">
     <script type="application/ld+json">
         {
             "@context": "http://schema.org",
@@ -62,12 +62,20 @@
                 </div>
             </div>
             <div id="settings_container" class="clock_container" style="position: absolute;display: none;transition: 0.5s;opacity: 0;">
-                <div id="settings_menu" class="transparent" style="position: absolute;width: 800px;height: 400px;backdrop-filter: blur(0px);border: solid 1px;border-color: rgba(255,255,255,0.25);max-height: 400px;display: flex;flex-direction: column;transition: 1s;">
+                <div id="settings_menu" class="transparent" style="position: absolute;width: 800px;height: 400px;backdrop-filter: blur(0px);-webkit-backdrop-filter: blur(0px);border: solid 1px;border-color: rgba(255,255,255,0.25);max-height: 400px;display: flex;flex-direction: column;transition: 1s;">
                     <p class="text-center transparent" id="settings_text" style="font-size: 45px;background: rgba(0,0,0,0.5);border: none;border-bottom: 1px solid;border-color: rgba(255,255,255,0.25);">Settings</p>
                     <div id="settings_checkboxes" style="display: flex;align-items: center;justify-content: center;margin-top: 20px;flex-direction: column;">
                         <div>
-                            <div class="form-check" style="font-size: 32px;"><input class="form-check-input" type="checkbox" id="gradient_checkbox" checked="" name="gradient" style="background-color: #123667;border-color: white;"><label class="form-check-label" for="formCheck">Gradient Background</label></div>
-                            <div class="form-check" style="font-size: 32px;"><input class="form-check-input" type="checkbox" id="clock_overlap_checkbox" checked="" name="clock_overlap" style="background-color: #123667;border-color: white;"><label class="form-check-label" for="gradient_checkbox-1">Clock Overlap</label></div>
+                            <div id="gradient_settings" class="settings_item" style="display: flex;justify-content: center;/*align-items: center;*/flex-direction: column;margin-bottom: 10px;"><label class="form-check-label" for="formCheck" style="font-size: 32px;margin-left: 48px;">Background</label>
+                                <div style="display: flex;">
+                                    <div class="dropdown"><button class="btn dropdown-toggle transparent transparent_button" aria-expanded="false" data-bs-toggle="dropdown" id="dropdown_button" style="height:30px;margin-left:48px;" type="button">Gradient</button>
+                                        <div class="dropdown-menu transparent" id="background_dropdown" style="backdrop-filter: blur(10px);-webkit-backdrop-filter: blur(10px);"><button class="dropdown-item background_dropdown_item" id="gradient_button" type="button">Gradient</button><button class="dropdown-item background_dropdown_item" id="none_button" type="button">None</button><button class="dropdown-item background_dropdown_item" id="custom_image_button" type="button">Custom Image</button></div>
+                                    </div><input type="url" id="custom_image_url_box" class="transparent" style="margin-left: 15px;backdrop-filter: blur(10px);-webkit-backdrop-filter: blur(10px);padding-left: 15px;display: none;" placeholder="Insert Image URL" name="image_url">
+                                </div>
+                            </div>
+                            <div id="clock_overlap_settings" class="settings_item">
+                                <div class="form-check" style="font-size: 32px;"><input class="form-check-input" type="checkbox" id="clock_overlap_checkbox" checked="" name="clock_overlap" style="background-color: #123667;border-color: white;"><label class="form-check-label" for="gradient_checkbox-1">Clock Overlap</label></div>
+                            </div>
                         </div>
                     </div>
                     <div id="settings_exit" class="transparent transparent_button" type="button" style="place-self: center;margin-top: auto;margin-bottom: 75px;">
@@ -81,7 +89,7 @@
         <div id="credits_button" class="transparent_button transparent" style="margin: 35px;margin-left: auto;bottom: 0;" type="button">
             <p style="margin: 0;">Credits</p>
         </div>
-        <div id="credits_display" class="transparent" style="width: 100vw;height: 100px;border-bottom-right-radius: 0;border-bottom-left-radius: 0;border-top-left-radius: 20px;border-top-right-radius: 20px;place-self: end;align-items: center;justify-content: center;display: flex;border-bottom: none;backdrop-filter: blur(10px);border-left: none;border-right: none;padding: 10px;">
+        <div id="credits_display" class="transparent" style="width: 100vw;height: 100px;border-bottom-right-radius: 0;border-bottom-left-radius: 0;border-top-left-radius: 20px;border-top-right-radius: 20px;place-self: end;align-items: center;justify-content: center;display: flex;border-bottom: none;backdrop-filter: blur(10px);-webkit-backdrop-filter: blur(10px);border-left: none;border-right: none;padding: 10px;">
             <p style="text-decoration: none;text-align: center;"><a href="https://github.com/DarthWynaut/Orbit-Clock" style="color: rgb(255, 255, 255);text-decoration-color: white;font-weight: bold;"><img src="assets/img/Settings.png" style="width: 20px;opacity: 0.50;margin-right: 10px;"><span style="color:rgb(255, 255, 255);">Orbit Clock</span></a>&nbsp;- A remake of&nbsp;<a href="https://web.archive.org/web/20201117151224/https://www.deviantart.com/dd-921" style="color: rgb(255, 255, 255);text-decoration-color: white;"><span style="color:rgb(255, 255, 255);">DD-921</span></a>'s&nbsp;<a href="https://web.archive.org/web/20200921005418/https://www.deviantart.com/dd-921/art/Rainmeter-Simply-1-0-719897850" style="color: rgb(255, 255, 255);text-decoration-color: white;"><span style="color:rgb(255, 255, 255);">Simply</span></a>&nbsp;by <a href="https://github.com/DarthWynaut" style="text-decoration-color:white;"><span style="color:rgb(255, 255, 255);">DarthWynaut</span></a></p>
         </div>
     </div>
